@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
 
@@ -20,7 +21,7 @@ const Generator = (function() {
     return `
     ${generateLiItemWithDataID(bookmark)}
     ${generateBookmarkHeader(bookmark)}
-    ${genereateDivWithClassHTML(hiddenStatus)}
+    ${generateDivWithClassHTML(hiddenStatus)}
       ${generateBookmarkDescriptionHTML(bookmark)}
       ${generateBookmarkURLHTML(bookmark)}${generateBookmarkEditButtonHTML()}
       ${generateDeleteButtonHTML(bookmark)}
@@ -37,10 +38,10 @@ const Generator = (function() {
     </li>`;
   }
 
-  function genereateDivWithClassHTML(hiddenStatus) {
+  function generateDivWithClassHTML(hiddenStatus) {
     return `<aside class='bookmark-body ${hiddenStatus}' role="complementary">`;
   }
-// HTML for titles
+  // HTML for titles
   function generateBookmarkHeader(bookmark) {
     return `<section class='bookmark-header js-bookmark-header'><button class='header-button'>${
       bookmark.title

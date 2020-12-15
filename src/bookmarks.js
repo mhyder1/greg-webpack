@@ -34,11 +34,9 @@ const Bookmarks = (function() {
       API.createNewBookmark(
         newBookmarkObject,
         newBookmark => {
-          // Add bookmark to the store
           Store.addBookmark(newBookmark);
           // Toggle the form visibility
           Store.setAddingBookmarkStatus(false);
-          // Render
           render();
         },
         error => errorCallback(error)

@@ -9,6 +9,7 @@
     "build": "webpack --mode production",
     "deploy": "gh-pages -d dist"
   },
+  
   "author": "Greg Powell",
   "license": "ISC",
   "dependencies": {
