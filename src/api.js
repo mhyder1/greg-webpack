@@ -2,7 +2,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable strict */
 
-const API = (function() {
   // Base url for API
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/gabriel';
 
@@ -45,10 +44,9 @@ const API = (function() {
     });
   }
 
-  return {
+  export default {
     createNewBookmark,
     deleteBookmark,
     getBookmarks,
     updateBookmark
   };
-})();

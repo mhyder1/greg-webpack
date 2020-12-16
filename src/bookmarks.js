@@ -2,19 +2,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
 /* global Store, API, Generator */
-
-const Bookmarks = (function() {
-
-  // Handle binding all event listeners
-  function bindEventListeners() {
-    handleNewBookmarkClicked();
-    handleAddBookmarkClicked();
-    handleDeleteBookmarkClicked();
-    handleFilterRatingsDropdown();
-    handleToggleExpandedBookmarkView();
-    handleEditBookmarkClicked();
-    handleCancelButton();
-  }
+import $ from 'jquery';
+import Store from './Store';
+import Generator from './Generator';
 
   function handleNewBookmarkClicked() {
     $('#js-new-bookmark').on('click', () => {
@@ -259,8 +249,19 @@ const Bookmarks = (function() {
     }
   }
 
-  return {
+  // Handle binding all event listeners
+  function bindEventListeners() {
+    handleNewBookmarkClicked();
+    handleAddBookmarkClicked();
+    handleDeleteBookmarkClicked();
+    handleFilterRatingsDropdown();
+    handleToggleExpandedBookmarkView();
+    handleEditBookmarkClicked();
+    handleCancelButton();
+  }
+
+  export default {
     render,
     bindEventListeners
   };
-})();
+

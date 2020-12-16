@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
-
-const Generator = (function() {
  
   function generateBookmarksListHTML(arrayOfBookmarks, filterValue) {
     return mapFilteredArrayOfBookmarksToHTML(
@@ -197,9 +195,8 @@ const Generator = (function() {
     `;
   }
 
-  return {
+  export default {
     generateUpdateBookmarkForm,
     generateNewBookmarkFormHTML,
     generateBookmarksListHTML
   };
-})();

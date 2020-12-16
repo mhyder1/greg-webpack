@@ -1,18 +1,20 @@
 /* eslint-disable no-undef */
 /* eslint-disable strict */
 /* Bookmarks, API */
-import Store from './store.js';
-import API from './api.js';
-import Bookmarks from './bookmarks.js';
+import $ from 'jquery';
+import Store from './Store.js';
+import api from './api.js';
+import bookmarks from './bookmarks';
+console.log(bookmarks)
 
 $(function() {
   
-  Bookmarks.bindEventListeners();
+  bookmarks.bindEventListeners();
   
-  API.getBookmarks(bookmarks => {
+  api.getBookmarks(bookMarks => {
     
-    bookmarks.forEach(bookmark => Store.addBookmark(bookmark));
+    bookMarks.forEach(bookmark => Store.addBookmark(bookmark));
     
-    Bookmarks.render();
+    bookmarks.render();
   });
 });

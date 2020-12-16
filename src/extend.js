@@ -2,6 +2,7 @@
 /* eslint-disable strict */
 
 /* global $ */
+
 const Extend = (function() {
   // Extend jQuery to serialize forms into JSON
   $.fn.extend({

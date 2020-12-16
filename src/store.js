@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
 // eslint-disabled-next-line no-unused-vars
-const Store = (function() {
+
   /***** Functions for modifying the store *****/
   function addBookmark(bookmarkObject) {
     const defaultObjectProps = {
@@ -98,7 +98,7 @@ const Store = (function() {
     this.editingObject = {};
   }
 
-  return {
+  export default {
     bookmarks: [],
     ratingFilter: 0,
     editingObject: {},
@@ -119,4 +119,3 @@ const Store = (function() {
     setEditingObject,
     resetEditingObject
   };
-})();
