@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable strict */
- 
+import Store from './Store';
+
   function generateBookmarksListHTML(arrayOfBookmarks, filterValue) {
     return mapFilteredArrayOfBookmarksToHTML(
       filterArrayOfBookmarks(arrayOfBookmarks, filterValue)
@@ -160,7 +161,7 @@
   // Generate and return HTML for new bookmark form
   function generateNewBookmarkFormHTML() {
     return `
-    <form id='js-new-item-form'>
+    <form enctype="multipart/form-data" id='js-new-item-form'>
     <fieldset>
     <legend>New Bookmark</legend>
       <div class='col-6'>

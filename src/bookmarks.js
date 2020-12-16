@@ -5,6 +5,7 @@
 import $ from 'jquery';
 import Store from './Store';
 import Generator from './Generator';
+import API from './API.js';
 
   function handleNewBookmarkClicked() {
     $('#js-new-bookmark').on('click', () => {
@@ -17,9 +18,14 @@ import Generator from './Generator';
   function handleAddBookmarkClicked() {
     $('#js-form-container').on('submit', '#js-new-item-form', event => {
       event.preventDefault();
-     
-      const serializedJSON = JSON.parse($(event.target).serializeJSON());
-      const newBookmarkObject = constructBookmarkObject(serializedJSON);
+
+      const serializedJSON = $(event.target).serializeArray()
+      let formDataObj = {}
+      serializedJSON.forEach(item => {
+        formDataObj[item.name] = item.value
+      })
+
+      const newBookmarkObject = constructBookmarkObject(formDataObj);
 
       API.createNewBookmark(
         newBookmarkObject,
@@ -149,7 +155,6 @@ import Generator from './Generator';
   // Function for constructing a new bookmark object
   function constructBookmarkObject(serializedJSON) {
     const newObject = {};
-
     // Make sure that object properties are valid before adding them to update object
     if (serializedJSON.title.length > 0) {
       newObject['title'] = serializedJSON.title;
